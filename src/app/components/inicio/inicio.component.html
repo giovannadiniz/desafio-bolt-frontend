@@ -1,23 +1,9 @@
 <app-default-layout>
   <div class="container-content">
-    <div class="glass-card">
-      <h2 class="table-title">Maiores Geradoras do Brasil</h2>
-
-      <table class="modern-table">
-        <thead>
-        <tr>
-          <th>Posição</th>
-          <th>Usina Geradora</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr><td>1º</td><td>Usina de Itaipu</td></tr>
-        <tr><td>2º</td><td>Usina de Belo Monte</td></tr>
-        <tr><td>3º</td><td>Usina de São Luiz do Tapajós</td></tr>
-        <tr><td>4º</td><td>Usina de Tucuruí</td></tr>
-        <tr><td>5º</td><td>Usina de Santo Antônio</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <app-default-table
+      [columns]="columns"
+      [data]="usinas"
+      [title]="'Maiores Geradoras do Brasil'">
+    </app-default-table>
   </div>
 </app-default-layout>

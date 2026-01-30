@@ -1,0 +1,232 @@
+.glass-card {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 180, 255, 0.2);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow:
+    0 8px 32px 0 rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(0, 180, 255, 0.1),
+    inset 0 0 60px rgba(0, 180, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,
+      transparent,
+      #00b4ff,
+      #00e5ff,
+      #00b4ff,
+      transparent
+    );
+    animation: energyFlow 3s linear infinite;
+  }
+}
+
+@keyframes energyFlow {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.table-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  text-shadow:
+    0 0 10px rgba(0, 180, 255, 0.5),
+    0 0 20px rgba(0, 180, 255, 0.3),
+    0 0 30px rgba(0, 180, 255, 0.2);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00b4ff, transparent);
+    box-shadow: 0 0 10px #00b4ff;
+  }
+}
+
+.modern-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: auto;
+
+  thead {
+    position: relative;
+  }
+
+  th {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    color: #00d4ff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background: rgba(0, 180, 255, 0.08);
+    border-bottom: 2px solid rgba(0, 180, 255, 0.3);
+    position: relative;
+    white-space: nowrap;
+
+    &:first-child {
+      border-radius: 10px 0 0 0;
+      width: 100px;
+      text-align: center;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    &:nth-child(2) {
+      width: auto;
+    }
+
+    &:nth-child(3) {
+      width: 150px;
+      white-space: nowrap;
+    }
+
+    &:nth-child(4) {
+      width: 80px;
+      text-align: center;
+    }
+
+    &:last-child {
+      border-radius: 0 10px 0 0;
+    }
+  }
+
+  tbody {
+    tr {
+      transition: all 0.3s ease;
+      position: relative;
+
+      &:hover {
+        transform: translateX(5px);
+
+        td {
+          background: rgba(0, 180, 255, 0.1);
+          border-bottom-color: rgba(0, 180, 255, 0.3);
+          color: #ffffff;
+
+          &:nth-child(2)::before {
+            opacity: 1;
+          }
+        }
+
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      &:last-child {
+        td {
+          border-bottom: none;
+
+          &:first-child {
+            border-radius: 0 0 0 10px;
+          }
+
+          &:last-child {
+            border-radius: 0 0 10px 0;
+          }
+        }
+      }
+    }
+  }
+
+  td {
+    padding: 1.2rem 1.5rem;
+    color: #e0e7ff;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(0, 180, 255, 0.1);
+    background: rgba(15, 23, 42, 0.3);
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:first-child {
+      font-weight: 700;
+      color: #00d4ff;
+      font-size: 1.1rem;
+      text-shadow: 0 0 8px rgba(0, 180, 255, 0.6);
+      text-align: center;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    &:nth-child(2) {
+      white-space: normal;
+      word-wrap: break-word;
+      max-width: 400px;
+
+      &::before {
+        content: '⚡';
+        margin-right: 10px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        font-size: 1.1rem;
+      }
+    }
+
+    &:nth-child(3) {
+      white-space: nowrap;
+    }
+
+    &:nth-child(4) {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container-content {
+    padding: 1rem;
+  }
+
+  .glass-card {
+    padding: 1.5rem;
+  }
+
+  .table-title {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+  }
+
+  .modern-table {
+    th,
+    td {
+      padding: 0.8rem 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    th:first-child,
+    td:first-child {
+      width: 60px;
+      font-size: 0.9rem;
+    }
+
+    td:nth-child(2) {
+      max-width: 200px;
+      font-size: 0.85rem;
+    }
+  }
+}

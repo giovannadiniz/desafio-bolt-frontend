@@ -1,0 +1,32 @@
+<div class="glass-card">
+  @if (title) {
+    <h2 class="table-title">{{ title }}</h2>
+  }
+
+  <table class="modern-table">
+    <thead>
+    <tr>
+      @for (column of columns; track column.header) {
+        <th>{{ column.header }}</th>
+      }
+    </tr>
+    </thead>
+    <tbody>
+      @if (data.length > 0) {
+        @for (row of data; track row; let rowIndex = $index) {
+          <tr>
+            @for (column of columns; track column.header) {
+              <td>{{ getCellValue(row, column, rowIndex) }}</td>
+            }
+          </tr>
+        }
+      } @else {
+        <tr>
+          <td [attr.colspan]="columns.length" class="no-data">
+            Nenhum dado disponível
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
