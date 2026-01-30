@@ -8,17 +8,16 @@ main {
   flex-direction: column;
   color: #ffffff;
 
-  /* Garante que ocupe a tela toda, mas sem passar disso */
   height: 100vh;
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Evita rolagem lateral */
+  overflow-x: hidden;
 }
 
 .content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  overflow-y: auto; /* Se o conteúdo crescer, a rolagem fica SÓ aqui dentro */
+  overflow-y: auto;
 }

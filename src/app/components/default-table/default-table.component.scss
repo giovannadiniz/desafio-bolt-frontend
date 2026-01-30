@@ -41,7 +41,7 @@
   font-size: 1.8rem;
   text-align: center;
   margin-bottom: 2rem;
-  color: #ffffff;
+  color: var(--white);
   text-transform: uppercase;
   letter-spacing: 3px;
   position: relative;
@@ -124,7 +124,7 @@
         td {
           background: rgba(0, 180, 255, 0.1);
           border-bottom-color: rgba(0, 180, 255, 0.3);
-          color: #ffffff;
+          color: var(--white);
 
           &:nth-child(2)::before {
             opacity: 1;
@@ -154,7 +154,7 @@
 
   td {
     padding: 1.2rem 1.5rem;
-    color: #e0e7ff;
+    color: var(--white-default);
     font-size: 1rem;
     border-bottom: 1px solid rgba(0, 180, 255, 0.1);
     background: rgba(15, 23, 42, 0.3);
@@ -165,7 +165,7 @@
 
     &:first-child {
       font-weight: 700;
-      color: #00d4ff;
+      color: var(--blue-light);
       font-size: 1.1rem;
       text-shadow: 0 0 8px rgba(0, 180, 255, 0.6);
       text-align: center;
