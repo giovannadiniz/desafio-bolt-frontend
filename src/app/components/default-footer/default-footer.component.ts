@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-default-footer',
@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './default-footer.component.scss'
 })
 export class DefaultFooterComponent {
+
+  urlLinkedin: string = 'https://www.linkedin.com/in/giovannadinizz/';
+
+  redirectToLinkedin() {
+    window.open(this.urlLinkedin, '_blank');
+  }
 
 }
