@@ -1,4 +1,5 @@
 export const environment = {
   BACKEND_URL: "http://localhost:8080",
-  CONTEXT_URL: "/api/usinas"
+  CONTEXT_URL: "/api/usinas",
+  URL_LINKEDIN: "https://www.linkedin.com/in/giovannadinizz/",
 };

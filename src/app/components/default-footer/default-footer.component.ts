@@ -1,18 +1,18 @@
 import {Component} from '@angular/core';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-default-footer',
   standalone: true,
-  imports: [],
+  imports: [
+  ],
   templateUrl: './default-footer.component.html',
   styleUrl: './default-footer.component.scss'
 })
 export class DefaultFooterComponent {
 
-  urlLinkedin: string = 'https://www.linkedin.com/in/giovannadinizz/';
-
   redirectToLinkedin() {
-    window.open(this.urlLinkedin, '_blank');
+    window.open(environment.URL_LINKEDIN, '_blank');
   }
 
 }
